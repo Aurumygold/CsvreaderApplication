@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  postgres:
+    container_name: postgres_db
+    image: postgres
+    environment:
+      POSTGRES_USER: mercadona-db
+      POSTGRES_PASSWORD: admin-db
+      POSTGRES_DB: mercadona
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5422:5432"
+    networks:
+      -  mercadona_db_net
+    restart: unless-stopped
+
+networks:
+  mercadona_db_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+
+volumes:
+  postgres:
+    driver: local
