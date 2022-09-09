@@ -2,9 +2,7 @@ package com.example.mercadona.processor;
 
 import com.example.mercadona.model.Factura;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,8 +11,6 @@ import static org.mockito.Mockito.*;
 
 public class FacturasItemProcessorTests {
 
-    @Rule
-    public ExpectedException expectedException ;
     @Mock
     private Factura next;
     private Factura next2;
