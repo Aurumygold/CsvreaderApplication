@@ -32,11 +32,16 @@ Este es proyecto ETL ( Extract, Transform and Load ) consiste en la lectura de u
 
 Puesto que solamente hay un unico fichero a tratar solamente existe una tabla de trabajo ( FACTURA ), el resto de tablas forman parte de la configuración de Spring Batch para poder trabajar.
 
-TABLA FACTURA 
+##### TABLA FACTURA 
+
   [1]: Identificador          - Secuencia autonumerica para el almacenar el Id en la Base de Datos.
+  
   [2]: Fecha                  - Almacena la fecha en el formato Europeo.
+  
   [3]: IdentificadorLegacy    - Almacena el Id del proyecto Origen.
+  
   [4]: Importe                - Almacena el importe en el formato decimal Americano.
+  
   [5]: Nombre                 - Almacena el nombre del proyecto Origen.
 
 
