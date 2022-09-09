@@ -8,6 +8,7 @@ import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.mockito.Mockito.*;
 
 public class FacturasItemProcessorTests {
@@ -27,7 +28,7 @@ public class FacturasItemProcessorTests {
 
         facturasItemProcessor = new FacturasItemProcessor();
     }
-
+    // Test que prueban la funcionalidad
     @Test
     public void testTratamientoFecha() {
 
@@ -37,11 +38,12 @@ public class FacturasItemProcessorTests {
     @Test
     public void testTratamientoImporte() {
 
+        assertEquals("1254.06", facturasItemProcessor.parseImporte("1254,06"));
         assertEquals("54.06", facturasItemProcessor.parseImporte("54,06"));
 
     }
     @Test
-    public void testTratamientoFactura() throws Exception{
+    public void testTratamientoFactura() {
 
         when(next.getIdentificadorlegacy()).thenReturn(20220045);
         when(next.getNombre()).thenReturn("Juan");
@@ -54,4 +56,24 @@ public class FacturasItemProcessorTests {
 
     }
 
+    // Test de errores
+
+    @Test
+    public void testTratamientoImporteKo() {
+
+        assertNotEquals("1254.06", facturasItemProcessor.parseImporte("1.254,06"));
+        assertNotEquals("1,254.06", facturasItemProcessor.parseImporte("1.254,06"));
+        assertNotEquals("54.06", facturasItemProcessor.parseImporte("54.06"));
+        assertNotEquals("54.06", facturasItemProcessor.parseImporte("kjg"));
+
+    }
+    @Test
+    public void testTratamientoFechaKo() {
+
+        assertNotEquals("15/12/2022", facturasItemProcessor.parseFecha("15/12/2022"));
+        assertNotEquals("15/12/2022", facturasItemProcessor.parseFecha("15/12/2022 20:55"));
+        assertNotEquals("15/12/2022", facturasItemProcessor.parseFecha("15-12-2022"));
+        assertNotEquals("15/12/2022", facturasItemProcessor.parseFecha("12-15-2022"));
+
+    }
 }
