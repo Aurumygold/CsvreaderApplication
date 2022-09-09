@@ -44,15 +44,9 @@ Puesto que solamente hay un unico fichero a tratar solamente existe una tabla de
   
   [5]: Nombre                 - Almacena el nombre del proyecto Origen.
 
-
-
-### Arbol de estructura
-Este arbol respresenta los directorios del repositorio:
-
-
-
 ## Instalación en local
-//To do
+
+
 
 ```bash
 $ npm install md-file-tree -g
