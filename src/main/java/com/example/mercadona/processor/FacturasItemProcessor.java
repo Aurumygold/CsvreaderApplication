@@ -28,7 +28,7 @@ public class FacturasItemProcessor implements ItemProcessor<Factura, Factura> {
 
     }
 
-    private String parseFecha (String in_fecha){
+    public String parseFecha (String in_fecha){
         String s_fecha;
         try {
             SimpleDateFormat in_f_formato = new SimpleDateFormat("MM/dd/yyyy");
@@ -44,7 +44,7 @@ public class FacturasItemProcessor implements ItemProcessor<Factura, Factura> {
         return s_fecha;
     }
 
-    private String parseImporte (String in_importe){
+    public String parseImporte (String in_importe){
         String s_importe;
         try {
             NumberFormat in_d_formato = NumberFormat.getInstance(Locale.FRANCE);
