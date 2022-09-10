@@ -44,23 +44,39 @@ Puesto que solamente hay un unico fichero a tratar solamente existe una tabla de
   
   [5]: Nombre                 - Almacena el nombre del proyecto Origen.
 
+## Arranque en local
 
-
-### Arbol de estructura
-Este arbol respresenta los directorios del repositorio:
-
-
-
-## Instalación en local
-//To do
-
+  1 - Docker
+  
+Tener instalado docker en el sistema
 ```bash
-$ npm install md-file-tree -g
+$ docker-compose -f $/src/docker-db.yml up
 ```
+
+Configurar una conexión a la BD traves de un gestor (SqlDeveloper, DBeaver ...)
+
+    Host : localhost
+    Port : 5422
+    Database : mercadona
+    User : mercadona-db
+    Pass : admin-db
+
+  2 - Aplicación principal 
+
+src/main/java/com/example/mercadona/CsvreaderApplication.java
+
+Acceder al fichero principal y ejecutar el el metodo main.
+
+  3 - JUnit  
+
+src/test/java/com/example/mercadona/CsvreaderApplicationTests.java
+
+Acceder al fichero principal de tests y ejecutar el el metodo main.
+
 
 ## Futuras caracteristicas
 
-  [1]: Añadir FlatFileItemReaderBuilder con tratamiento de coma decimal automática.
+  1 - Añadir FlatFileItemReaderBuilder con tratamiento de coma decimal automática.
 
 ## Autor
 
