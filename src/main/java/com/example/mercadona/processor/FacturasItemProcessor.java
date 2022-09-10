@@ -35,11 +35,10 @@ public class FacturasItemProcessor implements ItemProcessor<Factura, Factura> {
             SimpleDateFormat out_f_formato = new SimpleDateFormat("dd/MM/yyyy");
             java.util.Date f_fecha = in_f_formato.parse(in_fecha);
             s_fecha = out_f_formato.format(f_fecha);
-            //LOG.info("Item "+item+ " ha cogido la fecha" +f_fecha);
         }
         catch (java.text.ParseException  ex){
             s_fecha = in_fecha;
-            LOG.info("Item "+ in_fecha + " a fallado la conversion de fecha");
+            LOG.info("Item "+ in_fecha + " ha fallado la conversion de fecha");
         }
         return s_fecha;
     }
@@ -49,11 +48,10 @@ public class FacturasItemProcessor implements ItemProcessor<Factura, Factura> {
         try {
             NumberFormat in_d_formato = NumberFormat.getInstance(Locale.FRANCE);
             s_importe = in_d_formato.parse(in_importe).toString();
-            //LOG.info("Item "+item+ " ha cogido la numeracion" +s_importe);
         }
         catch (java.text.ParseException ex){
             s_importe = in_importe;
-            LOG.info("Item "+in_importe+ " a fallado la conversion numerica");
+            LOG.info("Item "+in_importe+ " ha fallado la conversion numérica");
         }
         return s_importe;
     }
