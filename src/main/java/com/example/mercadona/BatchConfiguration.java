@@ -18,16 +18,12 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
-import org.springframework.batch.item.file.transform.DefaultFieldSetFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import javax.sql.DataSource;
-import java.text.NumberFormat;
-import java.util.Locale;
-
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration extends DefaultBatchConfigurer {

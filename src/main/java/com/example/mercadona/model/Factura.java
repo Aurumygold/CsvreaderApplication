@@ -1,10 +1,8 @@
 package com.example.mercadona.model;
 
 import lombok.*;
-import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
